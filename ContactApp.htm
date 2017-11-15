@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html>
+<head>
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
-<body ng-app="myApp" ng-controller="userCtrl">
+</head>
+<body ng-app="myApp" ng-controller="contactsCtrl">
 
 <div class="w3-container">
 
@@ -16,7 +18,7 @@
 </div>
 
 
-<form ng-show="ShowList">
+<form ng-show="showList">
 <table class="w3-table w3-bordered w3-striped">
   <tr>
     <th>First Name</th>
@@ -42,7 +44,7 @@
 </form>
 
 
-<form ng-hide="hideform">
+<form ng-show="!showList">
   <h3 ng-show="edit">Add New Contact:</h3>
   <h3 ng-hide="edit">Edit Contact:</h3>
     <label>First Name:</label>
@@ -57,10 +59,10 @@
     <label>phone Number:</label>
     <input class="w3-input w3-border" type="text" ng-model="phone" placeholder="phone Number">
  <br>
-<button ng-hide="edit" ng-click="SaveEditContact(Contact.id)" class="w3-btn w3-green w3-ripple" ng-disabled="error || incomplete">&#10004; Save Edits</button>
+<button ng-hide="edit" ng-click="saveEditContact(Contact.id)" class="w3-btn w3-green w3-ripple" ng-disabled="error || incomplete">&#10004; Save Edits</button>
 
  <br>
-<button ng-show="edit"  ng-click="SaveNewContact(Contact.id)" class="w3-btn w3-green w3-ripple" ng-disabled="error || incomplete">&#10004; Save </button>
+<button ng-show="edit"  ng-click="saveNewContact(Contact.id)" class="w3-btn w3-green w3-ripple" ng-disabled="error || incomplete">&#10004; Save</button>
 
 </form>
 
